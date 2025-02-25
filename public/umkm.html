@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village Homestays</title>
     <link rel="icon" type="image/x-icon" href="assets/logobumen.png">
-    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <!-- Navigation -->
@@ -16,177 +27,212 @@
             <!-- Logo atau Nama Brand -->
             <a href="index.html">
                 <div class="flex items-center space-x-2">
-                    <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12"> <!-- Logo -->
-                    <span class="text-white font-semibold text-xl">Bumen Jelapan</span> <!-- Teks -->
+                    <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12">
+                    <span class="text-white font-semibold text-xl">Bumen Jelapan</span>
                 </div>
             </a>    
-    
-            <!-- Menu untuk Desktop (Tampil di layar besar) -->
+            
+            <!-- Menu untuk Desktop -->
             <div class="hidden md:flex gap-8">
                 <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
                 <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
                 <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
             </div>
-            <!-- Tombol Hubungi Kami -->
             <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">
                 Hubungi Kami
             </button>
-    
+            
             <!-- Tombol Hamburger untuk Mobile -->
             <div class="md:hidden">
-                <button class="text-white focus:outline-none">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
     
-        <!-- Menu untuk Mobile (Tampil saat tombol hamburger diklik) -->
-        <div class="navbar-menu flex flex-col bg-primary w-full px-6 py-4 space-y-2 md:hidden">
-            <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
-            <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
-            <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full mt-2">
+        <!-- Menu untuk Mobile -->
+        <div id="mobile-menu" class="hidden flex-col bg-primary w-full px-6 py-4 space-y-4 md:hidden">
+            <a href="umkm.html" class="text-white hover:text-secondary transition-colors block">UMKM</a>
+            <a href="homestay.html" class="text-white hover:text-secondary transition-colors block">Homestay</a>
+            <a href="wisata.html" class="text-white hover:text-secondary transition-colors block">Pariwisata</a>
+            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">
                 Hubungi Kami
             </button>
         </div>
     </nav>
 
-    <main class="bg-primary text-white text-center py-8">
+    <main class="bg-primary text-white text-center py-8 fade-in show">
         <h1 class="text-3xl font-bold">UMKM</h1>
         <p class="text-xl">Dusun Bumen Djelapan</p>
     </main>
 
     <section class="container mx-auto p-8">
-        <!-- card -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <!-- card Seblak Juragan 68-->
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-6 fade-in">
             <div class="flex flex-col md:flex-row items-center md:items-start">
-                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="https://storage.googleapis.com/a1aa/image/I1yWpXeZNIK1iFn3BcIURO8aTN_dpabuRljgmLBrGpU.jpg" alt="UMKM Image">
+                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="assets/umkm-webp/juragan68-8-min.webp" alt="UMKM Image">
                 <div class="md:ml-6 flex flex-col justify-center w-full md:w-3/4">
-                    <h2 class="text-xl font-bold text-primary mb-2">Cilok JEdar Membahana</h2>
+                    <h2 class="text-xl font-bold text-primary mb-2">
+                        Juragan 68: Seblak, Bakso, Keripik Bakso, Es Coklat Lumer, dan beragam Minuman lainnya
+                    </h2>
                     <p><strong>Jenis :</strong> Makanan</p>
-                    <p><strong>Alamat :</strong> Jl Bahagia Selalu, Bumen Jelapan, Karang Rejo, Borobudur, Kabupaten Magelang</p>
+                    <p><strong>Alamat :</strong> Bumen Jelapan RT. 3/RW. 7 Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang</p>
                     <p><strong>Jam Operasional :</strong> 08.00 - 17.00</p>
                     
                     <!-- button sosmed -->
                     <div class="mt-4 flex flex-wrap gap-3">
-                        <a href="https://wa.me/yourwhatsappnumber" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center">
+                        <a href="https://wa.me/6282322272643" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
                             <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
                         </a>
-                        <a href="https://instagram.com/yourinstagram" class="px-4 py-2 bg-pink-500 text-white rounded-lg flex items-center">
+                        <a href="hthttps://www.instagram.com/dapur_juragan68/" class="px-4 py-2 bg-pink-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
                             <img src="assets/instagram.png" alt="Instagram" class="mr-2"> Instagram
-                        </a>
-                        <a href="https://www.tiktok.com/@yourtiktok" class="px-4 py-2 bg-black text-white rounded-lg flex items-center">
-                            <img src="assets/tiktok.png" alt="TikTok" class="mr-2"> TikTok
-                        </a>
-                        <a href="https://facebook.com/yourfacebook" class="px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center">
-                            <img src="assets/facebook.png" alt="Facebook" class="mr-2"> Facebook
                         </a>
                     </div>
                 </div>
             </div>
             <div class="mt-4 text-gray-700">
-                <p><strong>Deskripsi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p><strong>Deskripsi:</strong> Seblak Juragan 68 merupakan destinasi kuliner yang menawarkan beragam camilan lezat dan minuman segar di Bumen Jelapan. Dengan pengalaman dalam menerima banyak pesanan, tempat ini menghadirkan pilihan kripik bakso renyah, seblak dengan cita rasa khas, serta minuman jumbo seperti es coklat dan es teh yang menyegarkan. <br><br>Selain itu, variasi bakso dengan isian keju, ati, pedas, dan ikan menjadi favorit pelanggan. Tak hanya itu, Ice Cream Pong dengan varian coklat, stroberi, dan pandan juga siap memanjakan pecinta manis. Dengan jam operasional dari pukul 09.00 hingga 17.00, Seblak Juragan 68 menjadi pilihan tepat bagi siapa saja yang ingin menikmati camilan berkualitas dengan rasa yang menggugah selera.</p>
             </div>
             <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/borobudur.jpg" alt="Gallery Image 1">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay1.jpg" alt="Gallery Image 2">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay3.jpg" alt="Gallery Image 3">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 5">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 6">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 7">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 8">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-1-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-2-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-3-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-4-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-5-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-6-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-7-min.webp" alt="Juragan 68">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/juragan68-9-min.webp" alt="Juragan 68">
             </div>
         </div>
         <!-- end card -->
 
-
-        <!-- card -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <!-- card Sandal Upanat-->
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-6 fade-in">
             <div class="flex flex-col md:flex-row items-center md:items-start">
-                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="https://storage.googleapis.com/a1aa/image/I1yWpXeZNIK1iFn3BcIURO8aTN_dpabuRljgmLBrGpU.jpg" alt="UMKM Image">
+                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="assets/umkm-webp/sandal5-min.webp" alt="UMKM Image">
                 <div class="md:ml-6 flex flex-col justify-center w-full md:w-3/4">
-                    <h2 class="text-xl font-bold text-primary mb-2">Cilok JEdar Membahana</h2>
-                    <p><strong>Jenis :</strong> Makanan</p>
-                    <p><strong>Alamat :</strong> Jl Bahagia Selalu, Bumen Jelapan, Karang Rejo, Borobudur, Kabupaten Magelang</p>
-                    <p><strong>Jam Operasional :</strong> 08.00 - 17.00</p>
+                    <h2 class="text-xl font-bold text-primary mb-2">Kerajinan Sandal Pak Rahmat</h2>
+                    <p><strong>Jenis :</strong> Pakaian</p>
+                    <p><strong>Alamat :</strong> Bumen Jelapan RT. 4/RW. 7 Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang</p>
+                    <p><strong>Jam Operasional :</strong> 08.00 - 16.00</p>
                     
                     <!-- button sosmed -->
                     <div class="mt-4 flex flex-wrap gap-3">
-                        <a href="https://wa.me/yourwhatsappnumber" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center">
+                        <a href="https://wa.me/6281329088990" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
                             <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
-                        </a>
-                        <a href="https://instagram.com/yourinstagram" class="px-4 py-2 bg-pink-500 text-white rounded-lg flex items-center">
-                            <img src="assets/instagram.png" alt="Instagram" class="mr-2"> Instagram
-                        </a>
-                        <a href="https://www.tiktok.com/@yourtiktok" class="px-4 py-2 bg-black text-white rounded-lg flex items-center">
-                            <img src="assets/tiktok.png" alt="TikTok" class="mr-2"> TikTok
-                        </a>
-                        <a href="https://facebook.com/yourfacebook" class="px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center">
-                            <img src="assets/facebook.png" alt="Facebook" class="mr-2"> Facebook
                         </a>
                     </div>
                 </div>
             </div>
             <div class="mt-4 text-gray-700">
-                <p><strong>Deskripsi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p><strong>Deskripsi:</strong> Kerajinan Sandal Pak Rahmat merupakan usaha lokal yang telah berjalan selama dua tahun dan berlokasi di RT 4 RW 7. Dikelola oleh BUMDES, namun tetap melayani pesanan pribadi, usaha ini menghadirkan berbagai jenis sandal seperti sandal jepit, slop, dan jempol, serta baju batik perca yang unik dan berkualitas. Dengan jam operasional dari pukul 08.00 hingga 16.00, Kerajinan Sandal Pak Rahmat menjadi pilihan tepat bagi masyarakat yang mencari produk handmade dengan sentuhan khas.</p>
             </div>
-            <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/borobudur.jpg" alt="Gallery Image 1">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay1.jpg" alt="Gallery Image 2">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay3.jpg" alt="Gallery Image 3">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 5">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 6">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 7">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 8">
+            <div class="mt-4 item overflow-x-auto whitespace-nowrap flex space-x-4">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal-min.webp" alt="Sandal Pak Rahmat">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal1-min.webp" alt="Sandal Pak Rahmat">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal2-min.webp" alt="Sandal Pak Rahmat">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal3-min.webp" alt="Sandal Pak Rahmat">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal4-min.webp" alt="Sandal Pak Rahmat">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/sandal5-min.webp" alt="Sandal Pak Rahmat">
             </div>
         </div>
         <!-- end card -->
 
-        <!-- card -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <!-- card Bubut-->
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-6 fade-in">
             <div class="flex flex-col md:flex-row items-center md:items-start">
-                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="https://storage.googleapis.com/a1aa/image/I1yWpXeZNIK1iFn3BcIURO8aTN_dpabuRljgmLBrGpU.jpg" alt="UMKM Image">
+                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="assets/umkm-webp/bubut4-min.webp" alt="UMKM Image">
                 <div class="md:ml-6 flex flex-col justify-center w-full md:w-3/4">
-                    <h2 class="text-xl font-bold text-primary mb-2">Cilok JEdar Membahana</h2>
-                    <p><strong>Jenis :</strong> Makanan</p>
-                    <p><strong>Alamat :</strong> Jl Bahagia Selalu, Bumen Jelapan, Karang Rejo, Borobudur, Kabupaten Magelang</p>
-                    <p><strong>Jam Operasional :</strong> 08.00 - 17.00</p>
+                    <h2 class="text-xl font-bold text-primary mb-2">Bengkel Bubut Pak Widi</h2>
+                    <p><strong>Jenis :</strong> Bengkel</p>
+                    <p><strong>Alamat :</strong> Bumen Jelapan RT. 4/RW. 7 Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang</p>
+                    <p><strong>Jam Operasional :</strong> 08.00 - 16.00</p>
                     
                     <!-- button sosmed -->
                     <div class="mt-4 flex flex-wrap gap-3">
-                        <a href="https://wa.me/yourwhatsappnumber" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center">
+                        <a href="https://wa.me/6285713166617" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
                             <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
-                        </a>
-                        <a href="https://instagram.com/yourinstagram" class="px-4 py-2 bg-pink-500 text-white rounded-lg flex items-center">
-                            <img src="assets/instagram.png" alt="Instagram" class="mr-2"> Instagram
-                        </a>
-                        <a href="https://www.tiktok.com/@yourtiktok" class="px-4 py-2 bg-black text-white rounded-lg flex items-center">
-                            <img src="assets/tiktok.png" alt="TikTok" class="mr-2"> TikTok
-                        </a>
-                        <a href="https://facebook.com/yourfacebook" class="px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center">
-                            <img src="assets/facebook.png" alt="Facebook" class="mr-2"> Facebook
                         </a>
                     </div>
                 </div>
             </div>
             <div class="mt-4 text-gray-700">
-                <p><strong>Deskripsi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p><strong>Deskripsi:</strong> Bengkel Bubut Widiantoro telah beroperasi sejak 2018 dan berlokasi di RT 4 RW 7. Usaha ini fokus pada pembuatan serta perbaikan sparepart untuk pemadam kebakaran dengan pesanan yang biasanya mencapai 50 pcs. Namun, saat tidak ada pesanan besar, bengkel ini juga melayani kebutuhan umum seperti pembuatan baut motor, mobil, hingga komponen mesin lainnya. Dengan jam operasional dari pukul 08.00 hingga 16.00, Bengkel Bubut Widiantoro menjadi pilihan terpercaya bagi pelanggan yang membutuhkan layanan bubut berkualitas dan presisi.</p>
             </div>
             <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/borobudur.jpg" alt="Gallery Image 1">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay1.jpg" alt="Gallery Image 2">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/homestay3.jpg" alt="Gallery Image 3">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 4">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 5">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 6">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 7">
-                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm2.jpeg" alt="Gallery Image 8">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut1-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut2-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut3-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut4-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut5-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut6-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut7-min.webp" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bubut8-min.webp" alt="Bubut Pak Widi">
             </div>
         </div>
-        <!-- end card -->
+        <!-- end card -->  
         
+         <!-- card Nasgor-->
+         <div class="bg-white p-6 rounded-lg shadow-lg mb-6 fade-in">
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="assets/umkm-webp/nasgor-syafa-min.webp" alt="UMKM Image">
+                <div class="md:ml-6 flex flex-col justify-center w-full md:w-3/4">
+                    <h2 class="text-xl font-bold text-primary mb-2">Warung Makan Pak Safak</h2>
+                    <p><strong>Jenis :</strong> Makanan</p>
+                    <p><strong>Alamat :</strong> Bumen Jelapan RT. 1/RW. 8 Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang</p>
+                    <p><strong>Jam Operasional :</strong> 15.00 - 22.00</p>
+                    
+                    <!-- button sosmed -->
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6285713166617" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-gray-700">
+                    <p><strong>Jam Operasional :</strong> 15.00 - 16.00</p>
+                <p><strong>Deskripsi:</strong> Nasgor Musafak, yang berlokasi di RT 1 RW 7, merupakan usaha kuliner yang baru dibuka sejak September namun sudah berhasil menarik banyak pelanggan. Dengan jam operasional dari pukul 15.00 hingga 22.00, tempat ini menawarkan berbagai hidangan lezat seperti nasi goreng, nasi godog, mi goreng, dan mi godog, serta aneka gorengan yang cocok dinikmati kapan saja. Untuk melengkapi santapan, tersedia juga pilihan minuman seperti teh, jeruk, kopi, dan susu jahe yang hangat. Meski tergolong baru, Nasgor Musafak telah menjadi favorit banyak orang berkat cita rasanya yang khas dan harga yang terjangkau.</p>
+            </div>
+            <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/nasgor1.jpg" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/nasgor2.jpg" alt="Bubut Pak Widi">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/nasgor-syafa-min.webp" alt="Bubut Pak Widi">
+            </div>
+        </div>
+        <!-- end card -->  
+        
+         <!-- card Bebek Brongot-->
+         <div class="bg-white p-6 rounded-lg shadow-lg mb-6 fade-in">
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <img class="w-full md:w-1/4 h-40 object-cover rounded-lg mb-4 md:mb-0" src="assets/umkm-webp/bebek.webp" alt="UMKM Image">
+                <div class="md:ml-6 flex flex-col justify-center w-full md:w-3/4">
+                    <h2 class="text-xl font-bold text-primary mb-2">Bebek Brongot Khas Bumen Jelapan</h2>
+                    <p><strong>Jenis :</strong> Makanan</p>
+                    <p><strong>Alamat :</strong> Bumen Jelapan RT. 2/RW. 7 Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang</p>
+                    <p><strong>Jam Operasional :</strong> -</p>
+                    
+                    <!-- button sosmed -->
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6281334732528" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-gray-700">
+                    <p><strong>Jam Operasional :</strong> 15.00 - 16.00</p>
+                <p><strong>Deskripsi:</strong> Bebek Brongot Khas Bumen Jelapan adalah pilihan tepat bagi pecinta olahan bebek yang lezat dan sehat usaha ini menyajikan berbagai varian bebek, mulai dari bacem, rica-rica, opor, hingga mangut. Tidak hanya bebek, tersedia juga pilihan ayam bagi pelanggan yang menginginkan alternatif lain. Menggunakan metode brongot, proses pengolahan ini dinilai lebih sehat karena mampu mengurangi kadar kolesterol tanpa menghilangkan cita rasa khasnya. Bebek kampung pilihan yang digunakan oleh Pak Hasim menghasilkan tekstur yang empuk, lembut, tidak amis, dan lebih gurih. Untuk menjaga kualitas dan kenyamanan, sistem pemesanan dilakukan secara pre-order, dan bagi yang ingin makan di tempat, diwajibkan melakukan reservasi terlebih dahulu.</p>
+            </div>
+            <div class="mt-4 overflow-x-auto whitespace-nowrap flex space-x-4">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bebek2.webp" alt="Bebek Brongot">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bebek3.webp" alt="Bebek Brongot">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bebek4.png" alt="Bebek Brongot">
+                <img class="w-40 h-40 object-cover rounded-lg" src="assets/umkm-webp/bebek5.png" alt="Bebek Brongot">
+            </div>
+        </div>
+        <!-- end card -->  
+
     </section>
 
     <section class="container mx-auto p-8">
@@ -290,14 +336,25 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuButton = document.querySelector(".md\\:hidden button");
-        const mobileMenu = document.querySelector(".navbar-menu");
+    // Toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuButton.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach(el => observer.observe(el));
+        });
 
 </script>
 </body>
