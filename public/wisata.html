@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desa Wisata</title>
     <link rel="icon" type="image/x-icon" href="assets/logobumen.png">
-    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <style>
@@ -24,40 +24,39 @@
             <!-- Logo atau Nama Brand -->
             <a href="index.html">
                 <div class="flex items-center space-x-2">
-                    <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12"> <!-- Logo -->
-                    <span class="text-white font-semibold text-xl">Bumen Jelapan</span> <!-- Teks -->
+                    <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12">
+                    <span class="text-white font-semibold text-xl">Bumen Jelapan</span>
                 </div>
             </a>    
-    
-            <!-- Menu untuk Desktop (Tampil di layar besar) -->
+            
+            <!-- Menu untuk Desktop -->
             <div class="hidden md:flex gap-8">
                 <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
                 <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
                 <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
             </div>
-            <!-- Tombol Hubungi Kami -->
             <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">
                 Hubungi Kami
             </button>
-    
+            
             <!-- Tombol Hamburger untuk Mobile -->
             <div class="md:hidden">
-                <button class="text-white focus:outline-none">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
     
-        <!-- Menu untuk Mobile (Tampil saat tombol hamburger diklik) -->
-        <div class="navbar-menu flex flex-col bg-primary w-full px-6 py-4 space-y-2 md:hidden">
-            <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
-            <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
-            <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full mt-2">
+        <!-- Menu untuk Mobile -->
+        <div id="mobile-menu" class="hidden flex-col bg-primary w-full px-6 py-4 space-y-4 md:hidden">
+            <a href="umkm.html" class="text-white hover:text-secondary transition-colors block">UMKM</a>
+            <a href="homestay.html" class="text-white hover:text-secondary transition-colors block">Homestay</a>
+            <a href="wisata.html" class="text-white hover:text-secondary transition-colors block">Pariwisata</a>
+            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">
                 Hubungi Kami
             </button>
         </div>
-    </nav>  
+    </nav>
 
     <main>
         <section class="hero bg-cover bg-center h-96 flex items-center" style="background-image: url('assets/backgroundWisata.jpg');">
@@ -227,13 +226,12 @@
             observer.observe(section);
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.querySelector(".md\\:hidden button");
-            const mobileMenu = document.querySelector(".navbar-menu");
+        // Toggle mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-            menuButton.addEventListener("click", function () {
-                mobileMenu.classList.toggle("hidden");
-            });
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
         
 
