@@ -3,273 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Village Homestays</title>
+    <title>Homestay - Bumen Jelapan</title>
     <link rel="icon" type="image/x-icon" href="assets/logobumen.png">
     <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-
+    <style>
+/* CSS untuk pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    text-align: center;
+    width: 80%; /* Lebar pop-up tetap sama */
+}
+.popup-content img {
+    width: 45%; /* Ukuran foto diperkecil */
+    height: auto;
+    margin: 10px; /* Jarak antar foto */
+    border-radius: 8px; /* Tambahkan border-radius untuk estetika */
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+#photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    </style>
 </head>
 <body class="font-sans bg-gray-100">
    <!-- Navigation -->
-    <nav class="bg-primary px-6 py-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo atau Nama Brand -->
-            <a href="index.html">
-                <div class="flex items-center space-x-2">
-                    <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12">
-                    <span class="text-white font-semibold text-xl">Bumen Jelapan</span>
+        <!-- Navigation -->
+        <nav class="bg-primary px-6 py-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo atau Nama Brand -->
+                <a href="index.html">
+                    <div class="flex items-center space-x-2">
+                        <img src="assets/logobumen.png" alt="Bumen Jelapan Logo" class="h-12">
+                        <span class="text-white font-semibold text-xl">Bumen Jelapan</span>
+                    </div>
+                </a>    
+                
+                <!-- Menu untuk Desktop -->
+                <div class="hidden md:flex gap-8">
+                    <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
+                    <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
+                    <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
                 </div>
-            </a>    
-            
-            <!-- Menu untuk Desktop -->
-            <div class="hidden md:flex gap-8">
-                <a href="umkm.html" class="text-white hover:text-secondary transition-colors">UMKM</a>
-                <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
-                <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
+                <a href="https://wa.me/6282242417328" class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">Hubungi Kami</a>
+                
+                <!-- Tombol Hamburger untuk Mobile -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">
-                Hubungi Kami
-            </button>
-            
-            <!-- Tombol Hamburger untuk Mobile -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
+        
+            <!-- Menu untuk Mobile -->
+            <div id="mobile-menu" class="hidden flex-col bg-primary w-full px-6 py-4 space-y-4 md:hidden">
+                <a href="umkm.html" class="text-white hover:text-secondary transition-colors block">UMKM</a>
+                <a href="homestay.html" class="text-white hover:text-secondary transition-colors block">Homestay</a>
+                <a href="wisata.html" class="text-white hover:text-secondary transition-colors block">Pariwisata</a>
+                <a href="https://wa.me/6282242417328" class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">Hubungi Kami</a>
             </div>
-        </div>
+        </nav>
+        <!-- Judul Section -->
+    <div class="bg-primary text-white text-center py-8 fade-in show">
+        <h1 class="text-3xl font-bold">Homestay</h1>
+        <p class="text-xl">Dusun Bumen Djelapan</p>
+    </div>
 
-        <!-- Menu untuk Mobile -->
-        <div id="mobile-menu" class="hidden flex-col bg-primary w-full px-6 py-4 space-y-4 md:hidden">
-            <a href="umkm.html" class="text-white hover:text-secondary transition-colors block">UMKM</a>
-            <a href="homestay.html" class="text-white hover:text-secondary transition-colors block">Homestay</a>
-            <a href="wisata.html" class="text-white hover:text-secondary transition-colors block">Pariwisata</a>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">
-                Hubungi Kami
-            </button>
-        </div>
-    </nav>
 
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Homestay Card 1 -->
+            <!-- Homestay Eni -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="assets/jek2.jpg" alt="Homestay 1" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-eni-cover.png" alt="Homestay 1" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Cozy Village Retreat</h2>
-                    <p class="text-gray-600 mb-4">Experience the warmth of village life in our comfortable homestay.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Free Wi-Fi</li>
-                            <li>Air Conditioning</li>
-                            <li>Traditional Breakfast</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Eni</h2>
+                    <p class="text-gray-600 mb-4">Homestay nyaman dengan suasana desa, serasa pulang kampung</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6281325022604" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Double Room (2 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Wi-Fi</li>
+                                <li>Dapur</li>
+                                <li>Tempat Parkir</li>
+                                <li>Ruang Tamu</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Sarapanh</li>
+                                <li>Teras/Balkon</li>
+                                <li>Tempat Parkir</li>
+                                <li>TV</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 123 456 7890</p>
-                        <p class="text-gray-600">Email: cozy@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-eni.png,assets/homestay/homestay-eni2.png,assets/homestay/homestay-eni3.png,assets/homestay/homestay-eni4.png,assets/homestay/homestay-eni5.png,assets/homestay/homestay-eni6.png,assets/homestay/homestay-eni7.png">Lihat Foto Homestay</button>
                 </div>
             </div>
 
-            <!-- Homestay Card 2 -->
+            <!-- Homestay Musafak -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="assets/jek5.jpg" alt="Homestay 2" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-musafak-cover.jpg" alt="Homestay 2" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Rustic Family House</h2>
-                    <p class="text-gray-600 mb-4">A spacious homestay perfect for families looking to experience village life.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Free Wi-Fi</li>
-                            <li>Kitchen</li>
-                            <li>Garden</li>
-                            <li>Parking</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Musyafak</h2>
+                    <p class="text-gray-600 mb-4">Homestay minimalis, sederhana, dan nyaman di tengah ramahnya suasana desa</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/62881023281778" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Family Room (4-6 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Kamar Mandi</li>
+                                <li>Teras/Balkon</li>
+                                <li>TV</li>
+                                <li>Pendingin Ruangan</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Makanan</li>
+                                <li>Pemanas Air</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 987 654 3210</p>
-                        <p class="text-gray-600">Email: rustic@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-musafak.jpg,assets/homestay/homestay-musafak2.jpg,assets/homestay/homestay-musafak3.jpg,assets/homestay/homestay-musafak4.jpg,assets/homestay/homestay-musafak5.jpg,assets/homestay/homestay-musafak6.jpg,assets/homestay/homestay-musafak7.jpg">Lihat Foto Homestay</button>
                 </div>
             </div>
 
-            <!-- Homestay Card 3 -->
+            <!-- Homestay Jogan -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="assets/jek4.jpg" alt="Homestay 3" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-jogan-cover.png" alt="Homestay 3" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Jogan Gumelar</h2>
+                    <p class="text-gray-600 mb-4">Nyaman, Terjangkau, dan penuh kehangangatan kawasan wisata Borobudur</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6281802500400" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Kamar Mandi</li>
+                                <li>Teras/Balkon</li>
+                                <li>TV</li>
+                                <li>Pendingin Ruangan</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Makanan</li>
+                                <li>Pemanas Air</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-jogan.jpeg,assets/homestay/homestay-jogan2.jpeg,assets/homestay/homestay-jogan3.jpeg,assets/homestay/homestay-jogan4.jpeg,assets/homestay/homestay-jogan5.jpeg">Lihat Foto Homestay</button>
                 </div>
             </div>
 
+            <!-- Homestay Bahrodin -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x300" alt="Homestay 3" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-bahrodin-cover.jpg" alt="Homestay 3" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Bahrodin</h2>
+                    <p class="text-gray-600 mb-4">Homestay minimalis, sederhana, dan nyaman di tengah ramahnya suasana desa</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6283867308482" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Wi-Fi</li>
+                                <li>Sarapanr</li>
+                                <li>Tempat Parkir</li>
+                                <li>Water Heater</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>AC</li>
+                                <li>Dapur</li>
+                                <li>Teras/Ballon</li>
+                                <li>Meeting Room</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-bahrodin.jpg,assets/homestay/homestay-bahrodin2.jpg,assets/homestay/homestay-bahrodin3.jpg">Lihat Foto Homestay</button>
+                </div>
+            </div>
+            
+            <!-- Homestay Durian -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="assets/homestay/homestay-durian-cover.webp" alt="Homestay 3" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Durian</h2>
+                    <p class="text-gray-600 mb-4">Tempat Menginap Nyaman dengan Suasana Tenang dan Pelayanan Bersahabat.</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6282243787548" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Wi-Fi</li>
+                                <li>Sarapan</li>
+                                <li>Tempat Parkir</li>
+                                <li>Water Heater</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Pendingin Ruangan</li>
+                                <li>Dapur</li>
+                                <li>Teras/Ballon</li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-durian.webp,assets/homestay/homestay-durian2.jpg,assets/homestay/homestay-durian3.webp,assets/homestay/homestay-durian4.jpg,assets/homestay/homestay-durian5.jpg,assets/homestay/homestay-durian6.jpg">Lihat Foto Homestay</button>
                 </div>
             </div>
 
+
+            <!-- Homestay Dragonflies -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x300" alt="Homestay 3" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-dragonflies-cover.jpg" alt="Homestay 3" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Dragonflies</h2>
+                    <p class="text-gray-600 mb-4">Homestay Nyaman dengan Suasana Asri dan Ketentraman Alam.</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="#" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Teras/Balkon</li>
+                                <li>Sarapan</li>
+                                <li>Tempat Parkir</li>
+                                <li>Pendingin Ruangan</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Kamar mandi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-dragonflies.jpg,assets/homestay/homestay-dragonflies2.jpg,assets/homestay/homestay-dragonflies3.jpg,assets/homestay/homestay-dragonflies4.jpg,assets/homestay/homestay-dragonflies5.jpg">Lihat Foto Homestay</button>
+                </div>
+            </div>
+            
+
+            <!-- Homestay Kastolani -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="assets/homestay/homestay-kastolani-cover.jpg" alt="Homestay 3" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Kastolani</h2>
+                    <p class="text-gray-600 mb-4">Homestays Sederhana dengan Kenyamanan dan Kehangatan Seperti di Rumah.</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6281328049594" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Teras/Balkon</li>
+                                <li>Tempat Parkir</li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-kastolani.jpg,assets/homestay/homestay-kastolani2.jpg,assets/homestay/homestay-kastolani-cover.jpg">Lihat Foto Homestay</button>
                 </div>
             </div>
 
 
+            <!-- Homestay Latar OMmbo -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x300" alt="Homestay 3" class="w-full h-48 object-cover">
+                <img src="assets/homestay/homestay-latar-ombo-cover.jpg" alt="Homestay 3" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
+                    <h2 class="text-2xl font-semibold text-primary mb-2">Homestay Latar Ombo</h2>
+                    <p class="text-gray-600 mb-4">Penginapan Sederhana dengan Ruang Luas untuk Kenyamanan dan Ketentraman Anda.</p>
+                    <div class="my-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6283867308482" class="px-4 py-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
                     </div>
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Fasilitas:</h3>
+                        <div class="grid grid-cols-2 gap-2 text-gray-600">
+                            <ul class="list-disc list-inside">
+                                <li>Teras/Balkon</li>
+                                <li>Tempat Parkir</li>
+                                <li>Pendingin Ruangan</li>
+                                <li>TV</li>
+                            </ul>
+                            <ul class="list-disc list-inside">
+                                <li>Kamar mandi</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
+                    <button class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300 view-photos-btn" data-photos="assets/homestay/homestay-latar-ombo.jpg,assets/homestay/homestay-latar-ombo2.jpg,assets/homestay/homestay-latar-ombo3.jpg,assets/homestay/homestay-latar-ombo4.jpg,assets/homestay/homestay-latar-ombo5.jpg,assets/homestay/homestay-latar-ombo6.jpg">Lihat Foto Homestay</button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x300" alt="Homestay 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
-                </div>
-            </div>
 
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/400x300" alt="Homestay 3" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold text-primary mb-2">Traditional Cottage</h2>
-                    <p class="text-gray-600 mb-4">Immerse yourself in the local culture with our authentic village cottage.</p>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Facilities:</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Traditional Decor</li>
-                            <li>Outdoor Seating</li>
-                            <li>Local Guide Available</li>
-                        </ul>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Room Type/Capacity:</h3>
-                        <p class="text-gray-600">Single/Double Room (1-2 persons)</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Contact:</h3>
-                        <p class="text-gray-600">Phone: +62 456 789 0123</p>
-                        <p class="text-gray-600">Email: cottage@villagehomestay.com</p>
-                    </div>
-                    <a href="#" class="inline-block bg-secondary text-white py-2 px-4 rounded hover:bg-opacity-90 transition duration-300">Book Now</a>
-                </div>
-            </div>
         </div>
     </main>
 
+    <!-- Pop-up untuk menampilkan foto homestay -->
+    <div id="photoPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div id="photoGallery"></div>
+        </div>
+    </div>
+
     <!-- Contact Section -->
-    <footer class="bg-primary text-white py-16 px-6">
+    <footer class="bg-primary text-white pt-16 pb-8 px-6">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold mb-8 text-center">Hubungi Kami</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -277,24 +360,24 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.3334768665582!2d110.18888608876662!3d-7.6111721981010145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8ce2e55db611%3A0x7e631b3ee6f26824!2sBumen%20Djelapan%2C%20Karangrejo%2C%20Kec.%20Borobudur%2C%20Kabupaten%20Magelang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1738543007396!5m2!1sid!2sid" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div>
-                    <h3 class="font-bold mb-4 text-xl">Alamat</h3>
-                    <p class="mb-6">Jl. Desa Indah No. 123, Kecamatan Sejahtera, Kabupaten Makmur, Provinsi Bahagia</p>
+                    <h3 class="font-bold mb- text-xl">Alamat</h3>
+                    <p class="mb-6">Dusun Bumen Jelapan, Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang, Provinsi Jawa Tengah</p>
                     
-                    <h3 class="font-bold mb-4 text-xl">Kontak</h3>
-                    <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i>0812345678910</p>
-                    <p class="mb-6"><i class="fas fa-envelope mr-2"></i>bumenjelapan@gmail.com</p>
-                    
-                    <h3 class="font-bold mb-4 text-xl">Media Sosial</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
+                    <h3 class="font-bold mb-1 text-xl">Kontak</h3>
+    
+                    <a class="mb-6" href="https://wa.me/6282242417328"><i class="fas fa-phone-alt mr-2"></i>Kepala Dusun : 0812345678910 (Amin Wastoni)</a><br>
+                    <a class="mb-2" href="https://wa.me/62895351151054"><i class="fas fa-phone-alt mr-2"></i>Ketua Pemuda : 0812345678910 (Muna)</a>
+
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <p>© made with love by. KKN REG UAD III.B.3</p>
+                        <div class="flex gap-3 mt-2">
+                            <a href="https://instagram.com/kkn.dibulan">
+                                <img src="assets/instagram.png" alt="instagram kkn">
+                            </a>
+                            <a href="https://tiktok.com/@kkn138borobudur2025">
+                                <img src="assets/tiktok.png" alt="tiktok kkn">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,6 +421,33 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Pop-up untuk menampilkan foto homestay
+        const photoPopup = document.getElementById('photoPopup');
+        const photoGallery = document.getElementById('photoGallery');
+        const closeBtn = document.querySelector('.close-btn');
+
+        document.querySelectorAll('.view-photos-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const photos = button.getAttribute('data-photos').split(',');
+                photoGallery.innerHTML = '';
+                photos.forEach(photo => {
+                    const img = document.createElement('img');
+                    img.src = photo;
+                    photoGallery.appendChild(img);
+                });
+                photoPopup.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            photoPopup.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === photoPopup) {
+                photoPopup.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
