@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Wisata</title>
+    <title>Wisata - Bumen Jelapan</title>
     <link rel="icon" type="image/x-icon" href="assets/logobumen.png">
     <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,9 +16,13 @@
         .animate-fadeIn {
             animation: fadeIn 0.5s ease-in-out;
         }
+        #carousel-container img {
+            margin-right: 10px; /* Atur sesuai keinginan */
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-100">
+    <!-- Navigation -->
     <nav class="bg-primary px-6 py-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo atau Nama Brand -->
@@ -35,9 +39,7 @@
                 <a href="homestay.html" class="text-white hover:text-secondary transition-colors">Homestay</a>
                 <a href="wisata.html" class="text-white hover:text-secondary transition-colors">Pariwisata</a>
             </div>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">
-                Hubungi Kami
-            </button>
+            <a href="https://wa.me/6282242417328" class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors hidden md:block">Hubungi Kami</a>
             
             <!-- Tombol Hamburger untuk Mobile -->
             <div class="md:hidden">
@@ -52,143 +54,240 @@
             <a href="umkm.html" class="text-white hover:text-secondary transition-colors block">UMKM</a>
             <a href="homestay.html" class="text-white hover:text-secondary transition-colors block">Homestay</a>
             <a href="wisata.html" class="text-white hover:text-secondary transition-colors block">Pariwisata</a>
-            <button class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">
-                Hubungi Kami
-            </button>
+            <a href="https://wa.me/6282242417328" class="bg-white text-primary px-4 py-2 rounded hover:bg-secondary hover:text-white transition-colors w-full">Hubungi Kami</a>
         </div>
     </nav>
 
     <main>
-        <section class="hero bg-cover bg-center h-96 flex items-center" style="background-image: url('assets/backgroundWisata.jpg');">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-6xl font-bold text-white">Destinasi Wisata</h2>
-                <p class="text-white">Jelajahi keindahan di Bumen Djelapan dan Sekitarnya</p>
+            <!-- Judul Section -->
+        <div class="bg-primary text-white text-center py-8 fade-in show">
+            <h1 class="text-3xl font-bold">Wisata di Dusun Bumen Jelapan</h1>
+            <p class="text-xl">Dan Sekitarnya</p>
+        </div>
+
+        <!-- section/Wisata utama -->
+        <section id="highlighted-attractions" class="container mx-auto px-6 py-12">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <!-- Carousel Container -->
+                <div class="relative">
+                    <div class="overflow-hidden rounded-lg">
+                        <div id="carousel-container" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Gambar akan diisi melalui JavaScript -->
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">❮</button>
+                    <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full">❯</button>
+                </div>
+                <div class="mt-6">
+                    <h2 class="text-2xl font-semibold text-primary">Wisata ATV & VW Classic</h2>
+                    <p class="text-gray-600 text-lg mt-2">Jam Operasional: 08.00 - 17.00 WIB</p>
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <a href="https://wa.me/6282322114193" class="px-4 py-2 mb-2 bg-green-500 text-white rounded-lg flex items-center transform hover:scale-105 transition-transform">
+                            <img src="assets/whatsapp.png" alt="WhatsApp" class="mr-2"> WhatsApp
+                        </a>
+                    </div>
+                    <p class="text-gray-700 mt-4">Nikmati pengalaman seru berkeliling Kecamatan Borobudur dengan ATV atau VW klasik! Wisatawan akan diajak menjelajahi keindahan alam, mengunjungi UMKM lokal, destinasi wisata menarik, serta spot foto estetik yang Instagramable. <br></p>
+                    <p class="text-gray-700 mt-4">Dilengkapi dengan fasilitas lengkap seperti guide profesional, balon, flare, dan fotografer handal untuk mengabadikan momen terbaik Anda. Pilih paket perjalanan sesuai keinginan, mulai dari Short Trip (2 jam), Medium Trip (3 jam), Long Trip (4 jam), hingga One Day Trip (8 jam).</p>
+                </div>
             </div>
         </section>
 
         <section id="attractions" class="container mx-auto px-6 py-12">
-            <h3 class="text-3xl font-semibold text-primary mb-8">Objek Wisata</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Attraction 1 -->
+                
+                <!-- Card Candi Borobudur -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img src="assets/jek5.jpg" alt="Air Terjun" class="w-full h-48 object-cover">
+                    <img src="assets/wisata/punthuk-cover.jpg" alt="Air Terjun" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold text-primary mb-2">Air Terjun Indah</h4>
-                        <p class="text-gray-600 mb-4">Nikmati keindahan air terjun alami dengan pemandangan yang memukau.</p>
-                        <button onclick="openGallery('gallery1')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
+                        <h4 class="text-xl font-semibold text-primary mb-2">Punthuk Setumbu</h4>
+                        <p class="text-gray-600 mb-4">Saksikan keindahan matahari terbit yang memukau dari puncak. Nikmati panorama Borobudur yang terselimuti kabut, menghadirkan ketenangan yang tak terlupakan.</p>
+                        <button onclick="openGallery('punthuk-setumbu')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
                     </div>
                 </div>
 
-                <!-- Attraction 2 -->
+                <!-- Card Punthuk Setumbu -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img src="assets/jek.jpg" alt="Sawah" class="w-full h-48 object-cover">
+                    <img src="assets/wisata/borobudur-cover.jpg" alt="Candi Borobudur" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold text-primary mb-2">Sawah Berundak</h4>
-                        <p class="text-gray-600 mb-4">Jelajahi keindahan sawah berundak yang menjadi ciri khas desa kami.</p>
-                        <button onclick="openGallery('gallery2')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
+                        <h4 class="text-xl font-semibold text-primary mb-2">Candi Borobudur</h4>
+                        <p class="text-gray-600 mb-4">Siapa yang tidak mengenal Candi Borobudur? Mahakarya warisan dunia yang megah dan penuh makna. Rasakan ketenangan spiritual sambil menikmati keindahan relief dan panorama sekitarnya.</p>
+                        <button onclick="openGallery('candi-borobudur')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
                     </div>
                 </div>
 
-                <!-- Attraction 3 -->
+                <!-- Card Bukit Barede -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img src="assets/jek3.jpg" alt="Pasar Tradisional" class="w-full h-48 object-cover">
+                    <img src="assets/wisata/barede-cover.png" alt="Bukit Barede" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold text-primary mb-2">Pasar Tradisional</h4>
-                        <p class="text-gray-600 mb-4">Rasakan atmosfer unik dan belanja produk lokal di pasar tradisional kami.</p>
-                        <button onclick="openGallery('gallery3')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
+                        <h4 class="text-xl font-semibold text-primary mb-2">Bukit Barede</h4>
+                        <p class="text-gray-600 mb-4">Nikmati keindahan matahari terbit dengan latar Borobudur yang menakjubkan. Tempat sempurna untuk merasakan ketenangan alam dari ketinggian.</p>
+                        <button onclick="openGallery('bukit-barede')" class="bg-secondary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Lihat Galeri</button>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <!-- Gallery Modals -->
-    <div id="gallery1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full">
-            <h4 class="text-2xl font-semibold text-primary mb-4">Galeri Air Terjun Indah</h4>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="assets/jek.jpg" alt="Air Terjun 1" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek2.jpg" alt="Air Terjun 2" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek3.jpg" alt="Air Terjun 3" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek4.jpg" alt="Air Terjun 4" class="w-full h-48 object-cover rounded">
+    <!-- Gallery Modals Punthuk -->
+    <div id="punthuk-setumbu" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-3xl w-full max-h-screen overflow-y-auto">
+            <!-- Header Galeri -->
+            <div class="flex justify-between items-center sticky top-0 bg-white p-4 shadow-md z-10">
+                <h4 class="text-2xl font-semibold text-primary">Galeri Punthuk Setumbu</h4>
+                <button onclick="closeGallery('punthuk-setumbu')" class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">
+                    Tutup
+                </button>
             </div>
-            <button onclick="closeGallery('gallery1')" class="mt-6 bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Tutup</button>
+            <!-- Konten Galeri -->
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <img src="assets/wisata/punthuk1.png" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk.jpg" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk2.jpg" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk3.jpg" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk4.jpg" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk4.png" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+                <img src="assets/wisata/punthuk5.png" alt="Punthuk Setumbu" class="w-full h-auto object-cover rounded">
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Gallery Modals Candi Borobudur -->
+    <div id="candi-borobudur" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-3xl w-full max-h-screen overflow-y-auto">
+            <!-- Header Galeri -->
+            <div class="flex justify-between items-center sticky top-0 bg-white p-4 shadow-md z-10">
+                <h4 class="text-2xl font-semibold text-primary">Galeri Candi Borobudur</h4>
+                <button onclick="closeGallery('candi-borobudur')" class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">
+                    Tutup
+                </button>
+            </div>
+            <!-- Konten Galeri -->
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <img src="assets/wisata/borobudur1.jpg" alt="Candi Borobudur" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/borobudur2.jpg" alt="Candi Borobudur" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/borobudur3.jpg" alt="Candi Borobudur" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/borobudur4.webp" alt="Candi Borobudur" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/borobudur5.jpeg" alt="Candi Borobudur" class="w-full h-48 object-cover rounded">
+            </div>
         </div>
     </div>
 
-    <div id="gallery2" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full">
-            <h4 class="text-2xl font-semibold text-primary mb-4">Galeri Sawah Berundak</h4>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="assets/jek.jpg" alt="Air Terjun 1" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek2.jpg" alt="Air Terjun 2" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek3.jpg" alt="Air Terjun 3" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek4.jpg" alt="Air Terjun 4" class="w-full h-48 object-cover rounded">
+
+    <!-- Gallery Modals Bukit Barede -->
+    <div id="bukit-barede" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-3xl w-full max-h-screen overflow-y-auto">
+            <!-- Header Galeri -->
+            <div class="flex justify-between items-center sticky top-0 bg-white p-4 shadow-md z-10">
+                <h4 class="text-2xl font-semibold text-primary">Galeri Bukit Barede</h4>
+                <button onclick="closeGallery('bukit-barede')" class="bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">
+                    Tutup
+                </button>
             </div>
-            <button onclick="closeGallery('gallery2')" class="mt-6 bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Tutup</button>
+            <!-- Konten Galeri -->
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <img src="assets/wisata/barede.png" alt="Bukit Barede" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/barede1.png" alt="Bukit Barede" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/barede2.png" alt="Bukit Barede" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/barede3.png" alt="Bukit Barede" class="w-full h-48 object-cover rounded">
+                <img src="assets/wisata/barede4.png" alt="Bukit Barede" class="w-full h-48 object-cover rounded">
+            </div>
         </div>
     </div>
-
-    <div id="gallery3" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full">
-            <h4 class="text-2xl font-semibold text-primary mb-4">Galeri Pasar Tradisional</h4>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="assets/jek.jpg" alt="Air Terjun 1" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek2.jpg" alt="Air Terjun 2" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek3.jpg" alt="Air Terjun 3" class="w-full h-48 object-cover rounded">
-                <img src="assets/jek4.jpg" alt="Air Terjun 4" class="w-full h-48 object-cover rounded">
-            </div>
-            <button onclick="closeGallery('gallery3')" class="mt-6 bg-primary text-white px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">Tutup</button>
-        </div>
-    </div>
-
+    
     <!-- Contact Section -->
-    <footer class="bg-primary text-white py-16 px-6">
-      <div class="container mx-auto">
-          <h2 class="text-3xl font-bold mb-8 text-center">Hubungi Kami</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div class="rounded-lg overflow-hidden shadow-lg hover-grow">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.3334768665582!2d110.18888608876662!3d-7.6111721981010145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8ce2e55db611%3A0x7e631b3ee6f26824!2sBumen%20Djelapan%2C%20Karangrejo%2C%20Kec.%20Borobudur%2C%20Kabupaten%20Magelang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1738543007396!5m2!1sid!2sid" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-              </div>
-              <div>
-                  <h3 class="font-bold mb-4 text-xl">Alamat</h3>
-                  <p class="mb-6">Jl. Desa Indah No. 123, Kecamatan Sejahtera, Kabupaten Makmur, Provinsi Bahagia</p>
-                  
-                  <h3 class="font-bold mb-4 text-xl">Kontak</h3>
-                  <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i>0812345678910</p>
-                  <p class="mb-6"><i class="fas fa-envelope mr-2"></i>bumenjelapan@gmail.com</p>
-                  
-                  <h3 class="font-bold mb-4 text-xl">Media Sosial</h3>
-                  <div class="flex gap-4">
-                      <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                          <i class="fab fa-facebook-f"></i>
-                      </a>
-                      <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                          <i class="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-colors">
-                          <i class="fab fa-twitter"></i>
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </footer>
+    <footer class="bg-primary text-white pt-16 pb-8 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Hubungi Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="rounded-lg overflow-hidden shadow-lg hover-grow">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.3334768665582!2d110.18888608876662!3d-7.6111721981010145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8ce2e55db611%3A0x7e631b3ee6f26824!2sBumen%20Djelapan%2C%20Karangrejo%2C%20Kec.%20Borobudur%2C%20Kabupaten%20Magelang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1738543007396!5m2!1sid!2sid" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div>
+                    <h3 class="font-bold mb- text-xl">Alamat</h3>
+                    <p class="mb-6">Dusun Bumen Jelapan, Desa/Kel. Karangrejo, Kec. Borobudur, Kab. Magelang, Provinsi Jawa Tengah</p>
+                    
+                    <h3 class="font-bold mb-1 text-xl">Kontak</h3>
+    
+                    <a class="mb-6" href="https://wa.me/6282242417328"><i class="fas fa-phone-alt mr-2"></i>Kepala Dusun : 0812345678910 (Amin Wastoni)</a><br>
+                    <a class="mb-2" href="https://wa.me/62895351151054"><i class="fas fa-phone-alt mr-2"></i>Ketua Pemuda : 0812345678910 (Muna)</a>
+
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <p>© made with love by. KKN REG UAD III.B.3</p>
+                        <div class="flex gap-3 mt-2">
+                            <a href="https://instagram.com/kkn.dibulan">
+                                <img src="assets/instagram.png" alt="instagram kkn">
+                            </a>
+                            <a href="https://tiktok.com/@kkn138borobudur2025">
+                                <img src="assets/tiktok.png" alt="tiktok kkn">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
       <!-- Back to Top Button -->
   <button id="backToTop" class="fixed bottom-4 right-4 bg-secondary text-white p-2 rounded-full hidden hover:bg-opacity-80 transition-colors">
     <i class="fas fa-arrow-up"></i>
   </button>
     <script>
+        // Carousel
+    const images = [
+        "assets/wisata/vw1.jpg",
+        "assets/wisata/vw2.jpg",
+        "assets/wisata/vw3.jpg"
+    ];
+
+    let currentIndex = 0;
+    const carouselContainer = document.getElementById("carousel-container");
+
+    function renderCarousel() {
+        const screenWidth = window.innerWidth;
+        const imagesPerView = screenWidth >= 1024 ? 2 : screenWidth >= 768 ? 2 : 1; // 2 gambar untuk lg/md, 1 gambar untuk sm
+        carouselContainer.innerHTML = "";
+
+        for (let i = 0; i < imagesPerView; i++) {
+            let imgIndex = (currentIndex + i) % images.length;
+            const imgElement = document.createElement("img");
+            imgElement.src = images[imgIndex];
+            imgElement.className = "w-1/" + imagesPerView + " h-80 object-cover rounded-lg";
+            carouselContainer.appendChild(imgElement);
+        }
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        renderCarousel();
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        renderCarousel();
+    }
+
+    window.addEventListener("resize", renderCarousel);
+    renderCarousel(); // Render pertama kali
+
+    setInterval(nextImage, 3000);
+    // end carousel
+
+
         function openGallery(id) {
-            document.getElementById(id).classList.remove('hidden');
-            document.getElementById(id).classList.add('flex', 'animate-fadeIn');
+            const modal = document.getElementById(id);
+            modal.classList.remove("hidden");
+            modal.classList.add("flex"); // Tambahkan flex setelah menghapus hidden
         }
 
         function closeGallery(id) {
-            document.getElementById(id).classList.add('hidden');
-            document.getElementById(id).classList.remove('flex', 'animate-fadeIn');
+            const modal = document.getElementById(id);
+            modal.classList.remove("flex"); // Hapus flex sebelum menambahkan hidden
+            modal.classList.add("hidden");
         }
+
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
